@@ -1,0 +1,13 @@
+version: '2'
+services: 
+  https_deployer:
+    container_name: https_deployer
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./server/:/opt/server
+      - ./deployer/:/opt/deployer
+      - /opt/ccram/website:/opt/ccram/website
+      - /opt/bootladder-blog/website:/opt/bootladder-blog/website
+
